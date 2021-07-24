@@ -4,6 +4,10 @@ const port = 3000;
 
 require('dotenv').config();
 
+const gameRoutes = require('./routers/game');
+
+app.use(gameRoutes);
+
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
