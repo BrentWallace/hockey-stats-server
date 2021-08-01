@@ -3,11 +3,19 @@ const router = express.Router();
 const Team = require('../models/team');
 
 router.get('/team', async (req,res) => {
-  let teams = await Team.find({});
-  return res.json({
-    status: 200,
-    data: teams,
-  })
+  try {
+    const teams = await Team.find();
+    return res.json({
+      status: 200,
+      data: teams,
+    });
+  } catch (e) {
+    return res.json({
+      status: 400,
+      data: 'Oops! There was an error with your search.',
+    })
+  }
+  
 });
 
 module.exports = router;
