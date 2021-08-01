@@ -4,7 +4,7 @@ const Player = require('../models/player');
 
 router.get('/player', async (req, res) => {
   try {
-    const players = await Player.find();
+    const players = await Player.find().sort({lastName: 'asc'});
     return res.json({
       status: 200,
       data: players

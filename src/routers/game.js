@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Game = require('../models/game');
 
-router.get('/game', (req, res) => {
+router.get('/game', async (req, res) => {
   try {
-    const games = Game.find();
+    const games = await Game.find().sort({ date_time_GMT: 'desc' });
     return res.json({
       status: 200,
       data: games

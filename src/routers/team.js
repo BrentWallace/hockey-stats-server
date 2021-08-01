@@ -4,7 +4,7 @@ const Team = require('../models/team');
 
 router.get('/team', async (req,res) => {
   try {
-    const teams = await Team.find();
+    const teams = await Team.find().sort({ shortName: 'asc' });
     return res.json({
       status: 200,
       data: teams,
