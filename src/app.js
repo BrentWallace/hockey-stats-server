@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
+require('./db/mongoose');
 const port = 3000;
 
-require('dotenv').config();
+
 
 const gameRoutes = require('./routers/game');
 const playerRoutes = require('./routers/player');
