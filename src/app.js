@@ -6,9 +6,11 @@ require('dotenv').config();
 
 const gameRoutes = require('./routers/game');
 const playerRoutes = require('./routers/player');
+const teamRoutes = require('./routers/team');
 
 app.use(gameRoutes);
 app.use(playerRoutes);
+app.use(teamRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World');
