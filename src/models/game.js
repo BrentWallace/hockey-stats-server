@@ -19,6 +19,6 @@ const gameSchema = new Schema ({
   venue_time_zone_tz: String,
 });
 
-const Player = mongoose.model('Player', playerSchema);
+const Game = mongoose.model('Game', gameSchema);
 
-module.exports = Player;
+module.exports = Game;
